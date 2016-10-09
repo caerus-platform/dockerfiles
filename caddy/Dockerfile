@@ -1,10 +1,13 @@
-FROM elasticsearch:2.4
+FROM abiosoft/caddy:0.9.3
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
+
+ENV HTTP2 false
+
+USER root
+RUN apk --no-cache add curl bash
 
 ADD https://raw.githubusercontent.com/danielwii/docker_base_scripts/master/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-RUN usermod -u 1000 elasticsearch
-
 ENTRYPOINT ["/entrypoint.sh"]
-CMD ["gosu", "elasticsearch", "elasticsearch"]
+CMD ["sh", "-c", "caddy -http2=${HTTP2} --conf /etc/Caddyfile"]

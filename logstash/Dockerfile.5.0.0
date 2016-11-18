@@ -1,10 +1,10 @@
 FROM logstash:5.0.0
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
 
-RUN /opt/logstash/bin/logstash-plugin install logstash-output-influxdb \
- && /opt/logstash/bin/logstash-plugin install logstash-output-mongodb \
- && /opt/logstash/bin/logstash-plugin install logstash-output-syslog \
- && /opt/logstash/bin/logstash-plugin install logstash-input-kafka
+RUN /usr/share/logstash/bin/logstash-plugin install logstash-output-influxdb \
+ && /usr/share/logstash/bin/logstash-plugin install logstash-output-mongodb \
+ && /usr/share/logstash/bin/logstash-plugin install logstash-output-syslog \
+ && /usr/share/logstash/bin/logstash-plugin install logstash-input-kafka
 
 ADD . /config-dir/
 

@@ -2,9 +2,9 @@ FROM logstash:2.4
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
 
 RUN /opt/logstash/bin/logstash-plugin install logstash-output-influxdb \
-    && /opt/logstash/bin/logstash-plugin install logstash-output-mongodb \
-    && /opt/logstash/bin/logstash-plugin install logstash-output-syslog \
-    && /opt/logstash/bin/logstash-plugin install logstash-input-kafka
+ && /opt/logstash/bin/logstash-plugin install logstash-output-mongodb \
+ && /opt/logstash/bin/logstash-plugin install logstash-output-syslog \
+ && /opt/logstash/bin/logstash-plugin install logstash-input-kafka
 
 ADD . /config-dir/
 

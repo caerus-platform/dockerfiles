@@ -2,7 +2,6 @@ FROM logstash:5.0.0
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
 
 RUN /usr/share/logstash/bin/logstash-plugin install logstash-output-influxdb \
- && /usr/share/logstash/bin/logstash-plugin install logstash-output-mongodb \
  && /usr/share/logstash/bin/logstash-plugin install logstash-output-syslog \
  && /usr/share/logstash/bin/logstash-plugin install logstash-input-kafka
 

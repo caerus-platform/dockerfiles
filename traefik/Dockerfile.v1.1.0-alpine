@@ -1,7 +1,7 @@
 FROM traefik:v1.1.0-alpine
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
 
-RUN apk --no-cache add bash
+RUN apk --no-cache add bash curl
 
 ADD https://raw.githubusercontent.com/danielwii/docker_base_scripts/master/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

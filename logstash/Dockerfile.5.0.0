@@ -7,7 +7,7 @@ RUN /usr/share/logstash/bin/logstash-plugin install logstash-output-influxdb \
  && /usr/share/logstash/bin/logstash-plugin install logstash-output-syslog \
  && /usr/share/logstash/bin/logstash-plugin install logstash-input-kafka
 
-ADD . /config-dir/
+RUN /usr/share/logstash/bin/logstash-plugin update
 
 ADD https://raw.githubusercontent.com/danielwii/docker_base_scripts/master/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

@@ -1,4 +1,4 @@
-FROM traefik:v1.0.0-rc2
+FROM traefik:v1.1.0-alpine
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
 
 ADD https://raw.githubusercontent.com/danielwii/docker_base_scripts/master/entrypoint.sh /entrypoint.sh

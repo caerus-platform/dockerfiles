@@ -7,3 +7,4 @@ ADD https://raw.githubusercontent.com/danielwii/docker_base_scripts/master/entry
 RUN chmod +x /entrypoint.sh
 
 ENTRYPOINT ["/entrypoint.sh"]
+CMD ["sh", "-c", "traefik"]

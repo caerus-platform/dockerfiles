@@ -1,4 +1,4 @@
-FROM logstash:5.0.0
+FROM logstash:5.0.1
 MAINTAINER Daniel Wei <danielwii0326@gmail.com>
 
 ENV HTTP_HOST 0.0.0.0
@@ -8,6 +8,8 @@ RUN /usr/share/logstash/bin/logstash-plugin install logstash-output-influxdb \
  && /usr/share/logstash/bin/logstash-plugin install logstash-input-kafka
 
 RUN /usr/share/logstash/bin/logstash-plugin update
+
+ADD . /config-dir/
 
 ADD https://raw.githubusercontent.com/danielwii/docker_base_scripts/master/entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
